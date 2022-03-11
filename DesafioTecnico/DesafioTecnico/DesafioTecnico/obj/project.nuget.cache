@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VP5Is2+Q30Cu7OkuTEnIiq9PM8+nMI0hqJs9V8cFn8kJqsLLdanyRbPvImSfm0OkgmfbO2cCrvTC8bb+lc0gvA==",
+  "success": true,
+  "projectFilePath": "E:\\Desafio Técnico\\DesafioTecnico\\DesafioTecnico\\DesafioTecnico\\DesafioTecnico\\DesafioTecnico.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
