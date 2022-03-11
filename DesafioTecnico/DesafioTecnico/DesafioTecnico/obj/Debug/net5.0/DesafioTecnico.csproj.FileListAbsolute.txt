@@ -20,3 +20,14 @@ E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\
 E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\obj\Debug\net5.0\DesafioTecnico.pdb
 E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\obj\Debug\net5.0\DesafioTecnico.genruntimeconfig.cache
 E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\obj\Debug\net5.0\ref\DesafioTecnico.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\MySqlConnector.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Pomelo.JsonObject.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\obj\Debug\net5.0\DesafioTecnico.csproj.CopyComplete
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.OData.Edm.dll

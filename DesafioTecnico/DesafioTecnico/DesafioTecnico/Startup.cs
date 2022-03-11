@@ -1,17 +1,12 @@
+using DesafioTecnico.Model.Context;
 using DesafioTecnico.Servicos;
 using DesafioTecnico.Servicos.Implementacao;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DesafioTecnico
 {
@@ -29,6 +24,9 @@ namespace DesafioTecnico
         {
 
             services.AddControllers();
+
+            var connection = Configuration["MySQLConnection:MySQLConnectionString"];
+            services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
 
             services.AddScoped<IEquipamentoServico, ImplementacaoEquipamento>();
         }

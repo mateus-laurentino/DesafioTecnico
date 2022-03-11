@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DesafioTecnico.Servicos;
 using DesafioTecnico.Model;
 
@@ -13,12 +8,10 @@ namespace DesafioTecnico.Controllers
     [Route("api/[controller]")]
     public class EquipamentoController : ControllerBase
     {
-        //private readonly ILogger<EquipamentoController> _logger;
         private IEquipamentoServico _equipamentoServico;
 
-        public EquipamentoController(/*ILogger<EquipamentoController> logger*/IEquipamentoServico equipamentoServico)
+        public EquipamentoController(IEquipamentoServico equipamentoServico)
         {
-            //_logger = logger;
             _equipamentoServico = equipamentoServico;
         }
 

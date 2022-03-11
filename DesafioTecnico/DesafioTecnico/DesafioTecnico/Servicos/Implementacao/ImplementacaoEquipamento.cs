@@ -1,69 +1,95 @@
 ﻿using DesafioTecnico.Model;
+using DesafioTecnico.Model.Context;
 using System;
 using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
 
 namespace DesafioTecnico.Servicos.Implementacao
 {
     public class ImplementacaoEquipamento : IEquipamentoServico
     {
-        private volatile int count;
+        private MySQLContext _context; 
+
+        public ImplementacaoEquipamento(MySQLContext context)
+        {
+            _context = context;
+        }
 
         public List<Equipamento> FindAll()
         {
-            List<Equipamento> equipamentos = new List<Equipamento>();
-            for(int x = 0; x < 10; x++)
-            {
-                Equipamento equipamento = MockEquipamento(x);
-                equipamentos.Add(equipamento);
-            }
-            return equipamentos;
+            return _context.Equipamentos.ToList();
+        }
+
+        public Equipamento FindById(int id)
+        {
+            return _context.Equipamentos.SingleOrDefault(e => e.id.Equals(id));
         }
 
         public Equipamento Create(Equipamento equipamento)
         {
+            if (!ExistePatrimonio(equipamento.numeroDoPatrimonio))
+            {
+                try
+                {
+                    _context.Add(equipamento);
+                    _context.SaveChanges();
+                }
+                catch (System.Exception)
+                {
+                    throw;
+                }
+            }
+            
             return equipamento;
         }
 
         public Equipamento Update(Equipamento equipamento)
         {
-            return equipamento;
-        }
+            if (!ExisteId(equipamento.id)) return new Equipamento();
 
-        public Equipamento FindById(int id)
-        {
-            return new Equipamento
+            var resultado = _context.Equipamentos.SingleOrDefault(p => p.id.Equals(equipamento.id));
+            if (resultado != null)
             {
-                Id = IncrementAndGet(),
-                Descricao = "Notebook",
-                Situacao = "Ativo",
-                DataDeCadastro = "05/10/2021",
-                DataDeAlteracao = "06/10/2021",
-                NumeroDoPatrimonio = 010203
-            };
+                try
+                {
+                    _context.Entry(resultado).CurrentValues.SetValues(equipamento);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+
+            return equipamento;
         }
 
         public void Delete(int id)
         {
-
-        }
-
-        private Equipamento MockEquipamento(int x)
-        {
-            return new Equipamento
+            var resultado = _context.Equipamentos.SingleOrDefault(p => p.id.Equals(id));
+            if(resultado != null)
             {
-                Id = IncrementAndGet(),
-                Descricao = "Produto" + x,
-                Situacao = "Situação" + x,
-                DataDeCadastro = "Data de cadatro" + x,
-                DataDeAlteracao = "Data de Alteração" + x,
-                NumeroDoPatrimonio = 010203 + x
-            };
+                try
+                {
+                    _context.Equipamentos.Remove(resultado);
+                    _context.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
 
-        private int IncrementAndGet()
+        private bool ExisteId(int id)
         {
-            return Interlocked.Increment(ref count);
+            return _context.Equipamentos.Any(p => p.id.Equals(id));
         }
+
+        private bool ExistePatrimonio(int patrimonio)
+        {
+            return _context.Equipamentos.Any(p => p.numeroDoPatrimonio.Equals(patrimonio));
+        }
+
     }
 }
