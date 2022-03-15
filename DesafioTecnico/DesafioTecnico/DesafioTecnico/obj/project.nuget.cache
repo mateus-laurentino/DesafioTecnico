@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YqOX4p4D3Kht0GirFzYKeWyeZZPosMlpo9bTKKuq+Lmylha1IVqU+VeR8b45Sl6G7EdjDyTBWh0ocQMqDu4CuA==",
+  "dgSpecHash": "TVp2dFEgt242wfkSXS6nR/Dym8/8GiL9uvSTfjxEPw/u9YYmgdU2cN0V/NkzxQNVBMn9hOYkm/WgyAyBLo4qFQ==",
   "success": true,
   "projectFilePath": "E:\\Desafio Técnico\\DesafioTecnico\\DesafioTecnico\\DesafioTecnico\\DesafioTecnico\\DesafioTecnico.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,10 @@
     "C:\\Users\\mateu\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
-    "C:\\Users\\mateu\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512"
+    "C:\\Users\\mateu\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
