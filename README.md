@@ -25,4 +25,4 @@ para cumprir a demanda de determinada empresa.
 | 07  | Consulta e retorno de dados                    | x     |
 | 08  | Filtragem por Descrição e Numero de Patrimonio | x     |
 | 09  | Alteração de situação                          | x     |
-| 10  | Exlusão por id                                 | x     |
+| 10  | Exclusão por id                                 | x     |
