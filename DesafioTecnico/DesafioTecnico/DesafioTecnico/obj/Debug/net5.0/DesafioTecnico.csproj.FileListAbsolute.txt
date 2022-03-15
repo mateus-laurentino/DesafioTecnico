@@ -31,3 +31,8 @@ E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\
 E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Pomelo.JsonObject.dll
 E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\obj\Debug\net5.0\DesafioTecnico.csproj.CopyComplete
 E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.OData.Edm.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Microsoft.OpenApi.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Desafio Técnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\DesafioTecnico\obj\Debug\net5.0\DesafioTecnico.MvcApplicationPartsAssemblyInfo.cs

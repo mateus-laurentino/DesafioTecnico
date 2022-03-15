@@ -1,5 +1,6 @@
 ﻿using DesafioTecnico.Model;
 using DesafioTecnico.Model.Context;
+using DesafioTecnico.Model.Functions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace DesafioTecnico.Servicos.Implementacao
     public class ImplementacaoEquipamento : IEquipamentoServico
     {
         private MySQLContext _context; 
+        verificador verificador = new verificador();
 
         public ImplementacaoEquipamento(MySQLContext context)
         {
@@ -20,40 +22,71 @@ namespace DesafioTecnico.Servicos.Implementacao
             return _context.Equipamentos.ToList();
         }
 
-        public Equipamento FindById(int id)
+        public Equipamento FindByPatrimonio(int patrimonio)
         {
-            return _context.Equipamentos.SingleOrDefault(e => e.id.Equals(id));
+            return _context.Equipamentos.SingleOrDefault(e => e.numeroDoPatrimonio.Equals(patrimonio));
+        }
+
+        public List<Equipamento> FindByDescricao(string Descricao)
+        {
+            List<Equipamento> equipamentos = new List<Equipamento>();
+            //equipamentos = _context.Equipamentos.ToList();
+            for(int x = 0; x < _context.Equipamentos.ToList().Count; x++)
+            {
+                if(_context.Equipamentos.ToList()[x].descricao == Descricao)
+                {
+                    equipamentos.Add(_context.Equipamentos.ToList()[x]);
+                }
+            }
+            return equipamentos;
+
+            //return _context.Equipamentos.Append(Descricao).ToList();
         }
 
         public Equipamento Create(Equipamento equipamento)
         {
-            if (!ExistePatrimonio(equipamento.numeroDoPatrimonio))
+            if(verificador.verificando(equipamento.descricao,equipamento.situacao,equipamento.numeroDoPatrimonio) == true)
             {
-                try
+                if (!ExistePatrimonio(equipamento.numeroDoPatrimonio))
                 {
-                    _context.Add(equipamento);
-                    _context.SaveChanges();
+                    try
+                    {
+                        equipamento.dataDeCadastro = DateTime.Now.ToShortDateString();
+                        equipamento.dataDeAlteracao = DateTime.Now.ToShortDateString();
+                        _context.Add(equipamento);
+                        _context.SaveChanges();
+                    }
+                    catch (System.Exception)
+                    {
+                        throw;
+                    }
+                    return equipamento;
                 }
-                catch (System.Exception)
-                {
-                    throw;
-                }
+                else return null;
+
             }
-            
-            return equipamento;
+            else
+            {
+                return null;
+            }
+
         }
 
         public Equipamento Update(Equipamento equipamento)
         {
-            if (!ExisteId(equipamento.id)) return new Equipamento();
 
             var resultado = _context.Equipamentos.SingleOrDefault(p => p.id.Equals(equipamento.id));
             if (resultado != null)
             {
                 try
                 {
-                    _context.Entry(resultado).CurrentValues.SetValues(equipamento);
-                    _context.SaveChanges();
+                    if (resultado.situacao != equipamento.situacao)
+                    {
+                        resultado.dataDeAlteracao = DateTime.Now.ToShortDateString();
+                        resultado.situacao = equipamento.situacao;
+                        _context.Entry(resultado);
+                        _context.SaveChanges();
+                    }
                 }
                 catch (Exception)
                 {
@@ -67,7 +100,7 @@ namespace DesafioTecnico.Servicos.Implementacao
         public void Delete(int id)
         {
             var resultado = _context.Equipamentos.SingleOrDefault(p => p.id.Equals(id));
-            if(resultado != null)
+            if (resultado != null)
             {
                 try
                 {
@@ -79,11 +112,6 @@ namespace DesafioTecnico.Servicos.Implementacao
                     throw;
                 }
             }
-        }
-
-        private bool ExisteId(int id)
-        {
-            return _context.Equipamentos.Any(p => p.id.Equals(id));
         }
 
         private bool ExistePatrimonio(int patrimonio)
